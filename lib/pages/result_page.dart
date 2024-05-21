@@ -5,8 +5,9 @@ import 'package:nova_quiz/pages/home_page.dart';
 import 'package:nova_quiz/widgets/app_button_widget.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({super.key});
-
+  const ResultPage({super.key, required this.correctAnswer, required this.wrongAnswer});
+  final int correctAnswer;
+  final int wrongAnswer;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +23,9 @@ class ResultPage extends StatelessWidget {
               children: [
                 const Spacer(),
                 Image.asset("assets/images/result.png",height: 280,),
-                const Text("پاسخ درست : 5",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                 Text("پاسخ درست : ${correctAnswer}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
                 const SizedBox(height: 8),
-                const Text("پاسخ اشتباه : 3",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                 Text("پاسخ اشتباه : ${wrongAnswer}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
                 const Spacer(),
                 AppButton(text: "برگشت به صفحه اصلی", onTap: () {
                   Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => const HomePage(),));
