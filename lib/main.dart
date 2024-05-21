@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nova_quiz/core/constants/app_colors.dart';
-import 'package:nova_quiz/pages/home_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:nova_quiz/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const SplashPage(),
     );
   }
 }
